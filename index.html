@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Figlet</title>
+</head>
+<body>
+
+    <input type="text" placeholder="Enter a sentence here..." id="textbox_id">
+
+
+    <pre id="txt"></pre>
+
+    <script type="text/javascript" src="figlet.js"></script>
+    <script>
+
+        let x = document.getElementById('textbox_id');
+        x.addEventListener('input', ()=> {
+                figlet(x.value , 'Standard', function(err, text) {
+                if (err) {
+                    console.log('something went wrong...');
+                    console.dir(err);
+                    return;
+                }
+                console.log(text);
+                document.getElementById("txt").innerHTML = text;
+            });
+        })               
+
+        
+
+
+
+    
+    </script>
+</body>
+</html>
